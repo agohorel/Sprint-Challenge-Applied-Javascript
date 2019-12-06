@@ -66,14 +66,14 @@ function updateOrder(direction) {
     switch (direction) {
       case "backward":
         if (idx < imgs.length - 1) {
-          img.setAttribute("data-index", (idx+1).toString());
+          img.setAttribute("data-index", (idx + 1).toString());
         } else if (idx === imgs.length - 1) {
           img.setAttribute("data-index", "0");
         }
         break;
       case "forward":
         if (idx > 0) {
-          img.setAttribute("data-index", (idx-1).toString());
+          img.setAttribute("data-index", (idx - 1).toString());
         } else if (idx === 0) {
           img.setAttribute("data-index", imgs.length - 1);
         }
