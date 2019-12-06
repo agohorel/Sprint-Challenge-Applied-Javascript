@@ -64,14 +64,14 @@ function updateOrder(direction) {
     let idx = Number(img.getAttribute("data-index"));
 
     switch (direction) {
-      case "forward":
+      case "backward":
         if (idx < imgs.length - 1) {
           img.setAttribute("data-index", (idx+1).toString());
         } else if (idx === imgs.length - 1) {
           img.setAttribute("data-index", "0");
         }
         break;
-      case "backward":
+      case "forward":
         if (idx > 0) {
           img.setAttribute("data-index", (idx-1).toString());
         } else if (idx === 0) {
