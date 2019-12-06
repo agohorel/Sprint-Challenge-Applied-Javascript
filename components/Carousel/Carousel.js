@@ -38,6 +38,11 @@ function createCarousel() {
   });
   component.appendChild(backBtn);
 
+  const backIcon = document.createElement("p");
+  backIcon.textContent = "⮜";
+  backIcon.classList.add("back-icon");
+  backBtn.appendChild(backIcon);
+
   imgs.map((img, index) => createImage(img, index, component));
 
   const forwardBtn = document.createElement("div");
@@ -46,6 +51,11 @@ function createCarousel() {
     updateOrder("forward");
   });
   component.appendChild(forwardBtn);
+
+  const forwardIcon = document.createElement("p");
+  forwardIcon.textContent = "⮞";
+  forwardIcon.classList.add("forward-icon");
+  forwardBtn.appendChild(forwardIcon);
 
   return component;
 }

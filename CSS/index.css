@@ -272,7 +272,7 @@ body {
 .carousel .right-button {
   display: flex;
   justify-content: center;
-  align-items: none;
+  align-items: center;
   flex-direction: row;
   color: #fff;
   background-color: #333;
@@ -287,7 +287,6 @@ body {
 .carousel .right-button:hover {
   color: #333;
   background-color: #fff;
-  border: 2px solid #333;
 }
 .carousel .left-button {
   top: 50%;
@@ -299,6 +298,16 @@ body {
   top: 50%;
   right: 25px;
   transform: translate(0, -50%);
+}
+.carousel .back-icon,
+.carousel .forward-icon {
+  font-size: 24px;
+}
+.carousel .back-icon {
+  margin-right: 4px;
+}
+.carousel .forward-icon {
+  margin-left: 4px;
 }
 .carousel img {
   width: 100%;
