@@ -19,6 +19,7 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
+    z-index: 5;
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
@@ -28,7 +29,6 @@
     top: 50%;
     left: 25px;
     transform: translate(0, -50%);
-    z-index: 2;
   }
   .right-button {
     top: 50%;
@@ -51,19 +51,23 @@
   img {
     .width-100();
     position: absolute;
-    transition: 0.5s ease-out all;
+    transition: .5s ease-out all;
 
     &[data-index="0"] {
       transform: translateX(0);
+      z-index: 0;
     }
     &[data-index="1"] {
-      transform: translateX(100%);
+      transform: translateX(200%);
+      z-index: 1;
     }
     &[data-index="2"] {
-      transform: translateX(200%);
+      transform: translateX(300%);
+      z-index: 2;
     }
     &[data-index="3"] {
-      transform: translateX(300%);
+      transform: translateX(100%);
+      z-index: 3;
     }
   }
 }
