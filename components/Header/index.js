@@ -49,7 +49,7 @@ function toggleDarkMode(){
     if (isDarkMode){
         background.style.backgroundColor = "#1c1c1c";
 
-        brightContent.forEach(el => el.style.backgroundColor = "#3c3c3c");
+        brightContent.forEach(el => el.style.backgroundColor = "#2c2c2c");
 
         darkContent.forEach(el => el.style.color = "#efefef");
 
