@@ -293,6 +293,7 @@ body {
   top: 50%;
   left: 25px;
   transform: translate(0, -50%);
+  z-index: 2;
 }
 .carousel .right-button {
   top: 50%;
@@ -301,4 +302,18 @@ body {
 }
 .carousel img {
   width: 100%;
+  position: absolute;
+  transition: 0.5s ease-out all;
+}
+.carousel img[data-index="0"] {
+  transform: translateX(0);
+}
+.carousel img[data-index="1"] {
+  transform: translateX(100%);
+}
+.carousel img[data-index="2"] {
+  transform: translateX(200%);
+}
+.carousel img[data-index="3"] {
+  transform: translateX(300%);
 }

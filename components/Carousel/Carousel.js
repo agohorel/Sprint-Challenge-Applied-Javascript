@@ -34,7 +34,7 @@ function createCarousel() {
   const backBtn = document.createElement("div");
   backBtn.classList.add("left-button");
   backBtn.addEventListener("click", () => {
-    console.log("clicked back");
+    updateOrder("backward");
   });
   component.appendChild(backBtn);
 
@@ -43,7 +43,7 @@ function createCarousel() {
   const forwardBtn = document.createElement("div");
   forwardBtn.classList.add("right-button");
   forwardBtn.addEventListener("click", () => {
-    console.log("clicked forward");
+    updateOrder("forward");
   });
   component.appendChild(forwardBtn);
 
@@ -55,4 +55,29 @@ function createImage(path, index, parent) {
   img.src = path;
   img.setAttribute("data-index", index);
   parent.appendChild(img);
+}
+
+function updateOrder(direction) {
+  const imgs = document.querySelectorAll(".carousel img");
+
+  imgs.forEach(img => {
+    let idx = Number(img.getAttribute("data-index"));
+
+    switch (direction) {
+      case "forward":
+        if (idx < imgs.length - 1) {
+          img.setAttribute("data-index", (idx+1).toString());
+        } else if (idx === imgs.length - 1) {
+          img.setAttribute("data-index", "0");
+        }
+        break;
+      case "backward":
+        if (idx > 0) {
+          img.setAttribute("data-index", (idx-1).toString());
+        } else if (idx === 0) {
+          img.setAttribute("data-index", imgs.length - 1);
+        }
+        break;
+    }
+  });
 }
