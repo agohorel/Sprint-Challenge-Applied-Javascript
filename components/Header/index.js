@@ -30,3 +30,34 @@ function createHeader() {
 }
 
 document.querySelector(".header-container").appendChild(createHeader());
+
+// DARK MODE STUFF
+const darkModeBtn = document.querySelector("#dark-mode");
+let isDarkMode = false;
+
+darkModeBtn.addEventListener("click", () => {
+    toggleDarkMode(isDarkMode);
+});
+
+function toggleDarkMode(){
+    isDarkMode = !isDarkMode;
+
+    const background = document.querySelector("body");
+    const brightContent = document.querySelectorAll(".header-container .header, .tabs, .card");
+    const darkContent = document.querySelectorAll(".headline, .card .author span, .header .date, .header span, .topics .title, .header h1");
+
+    if (isDarkMode){
+        background.style.backgroundColor = "#1c1c1c";
+
+        brightContent.forEach(el => el.style.backgroundColor = "#3c3c3c");
+
+        darkContent.forEach(el => el.style.color = "#efefef");
+
+    } else {
+        background.style.backgroundColor = "#f1f1f1";
+
+        brightContent.forEach(el => (el.style.backgroundColor = "#fff"));
+
+        darkContent.forEach(el => (el.style.color = "#000"));
+    }
+}

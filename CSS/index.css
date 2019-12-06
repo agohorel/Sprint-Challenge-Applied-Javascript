@@ -44,8 +44,10 @@ body {
   background-color: #f1f1f1;
   color: #333;
   font-family: 'PT Sans', sans-serif;
+  transition: 0.2s ease-out all;
 }
 .top-bar {
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -113,13 +115,16 @@ body {
 .top-bar .container .container-right span {
   cursor: pointer;
 }
+.top-bar .container .container-right span:not(:last-of-type) {
+  margin-right: 30px;
+}
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   background-color: #fff;
-  border-bottom: 1px solid lightgrey;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 120px;
   margin-top: 44px;
@@ -154,7 +159,7 @@ body {
   flex: 1;
 }
 .tabs {
-  border-bottom: 1px solid lightgrey;
+  box-shadow: 0px -1px 3px rgba(0, 0, 0, 0.125);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -217,7 +222,7 @@ body {
   }
 }
 .cards-container .card {
-  border-bottom: 1px solid lightgrey;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
   display: flex;
   justify-content: space-between;
   align-items: none;
